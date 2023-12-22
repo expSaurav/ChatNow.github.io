@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Chat App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        #chat-container {
+            flex: 1;
+            overflow-y: scroll;
+            padding: 20px;
+        }
+
+        #message-input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            margin-top: 10px;
+            border-radius: 5px;
+            width: 80%;
+        }
+
+        #send-button {
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <form id="chat-container">
+
+        <div id="chat-cont"></div>
+        <input type="text" id="message-input" placeholder="Type your message...">
+        <button id="send-button">Send</button>
+
+        <div id="divAp"></div>
+
+    </form>
+
+    <div id="footer" style="position: fixed; bottom: 0; width: 100%; background-color: #333; color: white; text-align: center; padding: 10px; font-size: 16px;">
+        Developed by Saurav ❤️
+    </div>
+    
+
+    </script>
+        <script src="http://localhost:3000/socket.io/socket.io.js">
+    </script>
+
+    <script>
+
+        var form = document.getElementById('chat-container');
+        var input = document.getElementById('message-input');
+      
+        var toAppend = document.getElementById('divAp');
+        var socket = io();
+
+      form.addEventListener('submit',function(e){
+        e.preventDefault();
+        
+        socket.emit('chat-message', input.value);
+        input.value = '';
+    
+
+  
+      });
+
+      socket.on('chat-message', function (msg) {
+    const messageElement = document.createElement('p');
+    messageElement.innerText = msg;
+    toAppend.appendChild(messageElement);
+});
+    </script>
+</body>
+</html>
