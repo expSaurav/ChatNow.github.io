@@ -3,8 +3,17 @@ const app = express();
 const http = require('http');
 const server = http.createServer(app);
 const { Server } = require("socket.io");
+const cors = require('cors');
 
-const io = new Server(server);
+app.use(cors());
+
+const io = new Server(server, {
+    cors: {
+        origin:"*",
+    },
+});
+
+var socket = io.connect('https://chat-now-seva.onrender.com/');
 
 app.get('/', function (req, res) {
     res.sendFile(__dirname + '/public/index.html');
