@@ -4,12 +4,15 @@ const http = require('http');
 const server = http.createServer(app);
 const { Server } = require("socket.io");
 const cors = require('cors');
+// var socket = io.connect('https://chat-now-seva.onrender.com/');
+
+const PORT = process.env.PORT || 3030;
 
 app.use(cors());
 
 const io = new Server(server, {
     cors: {
-        origin:"*",
+        origin:"https://chat-now-seva.onrender.com",
     },
 });
 
@@ -37,6 +40,6 @@ io.on('connection', (socket) => {
     });
 });
 
-server.listen(3000, function () {
-    console.log("Server is running on 3000");
+server.listen(PORT, function () {
+    console.log(`Server is running on ${PORT}`);
 });
