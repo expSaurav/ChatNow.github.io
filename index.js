@@ -13,7 +13,7 @@ const io = new Server(server, {
     },
 });
 
-var socket = io.connect('https://chat-now-seva.onrender.com/');
+// var socket = io.connect('https://chat-now-seva.onrender.com/');
 
 app.get('/', function (req, res) {
     res.sendFile(__dirname + '/public/index.html');
