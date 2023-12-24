@@ -42,6 +42,7 @@ io.on('connection', (socket) => {
     // Listen for chat-message event
     socket.on('chat-message', (msg) => {
         console.log('message: ' + msg);
+        console.log(total_user);
         
 
         // Broadcast the message to all connected clients
