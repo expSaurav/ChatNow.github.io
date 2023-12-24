@@ -13,7 +13,7 @@ app.use(cors());
 
 const io = new Server(server, {
     cors: {
-        origin:"https://chat-now-seva.onrender.com",
+        origin:"https://anonymously-chat-now.onrender.com/",
     },
 });
 
