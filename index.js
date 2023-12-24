@@ -4,6 +4,7 @@ const http = require('http');
 const server = http.createServer(app);
 const { Server } = require("socket.io");
 const cors = require('cors');
+var total_user =0;
 // var socket = io.connect('https://chat-now-seva.onrender.com/');
 
 const PORT = process.env.PORT || 3030;
@@ -22,12 +23,20 @@ app.get('/', function (req, res) {
     res.sendFile(__dirname + '/public/index.html');
 });
 
+app.get('/about', function(req,res){
+    res.sendFile(__dirname + '/public/about.html');
+})
+
 io.on('connection', (socket) => {
     console.log('a user connected');
+    total_user++;
+    console.log(`No. of Users online : ${total_user}`);
 
     // Listen for disconnect event
     socket.on('disconnect', () => {
         console.log('user disconnected');
+        total_user--;
+        console.log(`No. of Users online : ${total_user}`);
     });
 
     // Listen for chat-message event

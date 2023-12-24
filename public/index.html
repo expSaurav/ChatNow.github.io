@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Chat App</title>
+    <title>Anonymous Chat</title>
     <style>
        
         body {
@@ -24,6 +24,8 @@
         }
 
         #message-input {
+            left:50px;
+            position: absolute;
             padding: 10px;
             border: 1px solid #ccc;
             margin-top: 10px;
@@ -32,21 +34,83 @@
         }
 
         #send-button {
+            left:90vw;
+            position: absolute;
             padding: 10px;
             margin-top: 10px;
-            background-color: #223422;
+            background-color: #33a175;
             color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
         }
+
+        /* #buttonabt {
+  opacity: 0; 
+  transition: opacity 0.5s ease-in-out; 
+} */
+
+#buttonabt.show {
+  opacity: 1; /* When the "show" class is added, set opacity to 1 */
+}
+
+#aboutbtn {
+    position: absolute;
+    top:30px;
+    left:250px;
+
+  background-color: #4CAF50; /* Green color */
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+#aboutbtn:hover {
+  background-color: #45a049; /* Darker green color on hover */
+}
+
+
+
+        /* #aboutbtn {
+            
+ 
+  transition: opacity 0.5s ease-in-out; 
+  background-color: #3498db; /* Button background color */
+  /* border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+  cursor: pointer;
+} */ */
+
+button:hover {
+  background-color: #2980b9; 
+}
+
+button h2 {
+  margin: 0;
+}
+
+button a {
+  color: inherit; 
+  text-decoration: none;
+}
+
     </style>
 </head>
 <body>
     <form id="chat-container">
 
-        <div id="chat-cont"></div>
-        <input type="text" id="message-input" placeholder="Type your message...">
+        <div id="chat-cont"><h2>Anonymous Chat   |</h2>  <button id="aboutbtn"><p id="about" ><a href="about">ABOUT</a></p></button> </div>
+        <input type="text"  id="message-input" placeholder="Type your Anonymous message...">
         <button id="send-button">Send</button>
 
         <div id="divAp">
@@ -57,7 +121,8 @@
     </form>
 
     <div id="footer" style="position: fixed; bottom: 0; width: 100%; background-color: #333; color: white; text-align: center; padding: 10px; font-size: 16px;">
-        Developed by Saurav with ❤️
+        Developed by Saurav S(CSE-2023) with ❤️            v1.04
+        
     </div>
     
 
