@@ -91,6 +91,7 @@
     messageElement.innerText = msg;
     // time = hour + ' ' + minutes;
     toAppend.appendChild(messageElement);
+    messageElement.scrollIntoView({ behavior: 'smooth' });
     // time.appendChild(time);
 });
     </script>
