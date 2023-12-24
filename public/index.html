@@ -34,7 +34,7 @@
         }
 
         #send-button {
-            left:90vw;
+            left:80vw;
             position: absolute;
             padding: 10px;
             margin-top: 10px;
@@ -56,7 +56,7 @@
 
 #aboutbtn {
     position: absolute;
-    top:30px;
+    top:20px;
     left:250px;
 
   background-color: #4CAF50; /* Green color */
@@ -91,6 +91,10 @@
   cursor: pointer;
 } */ */
 
+#anony{
+    position: absolute;
+}
+
 button:hover {
   background-color: #2980b9; 
 }
@@ -104,13 +108,29 @@ button a {
   text-decoration: none;
 }
 
+@media (max-width: 768px) {
+    #anony{
+        position: absolute;
+        top:1px;
+    }
+    #message-input {
+        width:50vw;
+        position: absolute;
+        top:60px;
+    }
+    #send-button{
+        position:absolute;
+        top:60px;
+    }
+}
+
     </style>
 </head>
 <body>
     <form id="chat-container">
 
-        <div id="chat-cont"><h2>Anonymous Chat   |</h2>  <button id="aboutbtn"><p id="about" ><a href="about">ABOUT</a></p></button> </div>
-        <input type="text"  id="message-input" placeholder="Type your Anonymous message...">
+        <div id="chat-cont"><h2 id="anony">Anonymous Chat   |</h2>  <button id="aboutbtn"><p id="about" ><a href="about">ABOUT</a></p></button> </div>
+        <input type="text"  id="message-input" placeholder="Type your anonymous message" >
         <button id="send-button">Send</button>
 
         <div id="divAp">
@@ -121,7 +141,7 @@ button a {
     </form>
 
     <div id="footer" style="position: fixed; bottom: 0; width: 100%; background-color: #333; color: white; text-align: center; padding: 10px; font-size: 16px;">
-        Developed by Saurav S(CSE-2023) with ❤️            v1.04
+        Developed by Saurav S(CSE-2023) with ❤️            v1.04.01
         
     </div>
     
