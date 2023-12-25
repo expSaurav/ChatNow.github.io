@@ -20,7 +20,10 @@ const io = new Server(server, {
 // var socket = io.connect('https://chat-now-seva.onrender.com/');
 
 app.get('/', function (req, res) {
+    const ip_address = req.ip || req.connection.remoteAddress;
+    console.log(`Client IP Address: ${ip_address}`);
     res.sendFile(__dirname + '/public/index.html');
+
 });
 
 app.get('/about', function(req,res){
